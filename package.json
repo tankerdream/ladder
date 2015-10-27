@@ -1,0 +1,19 @@
+{
+  "name": "ladder",
+  "version": "0.0.1",
+  "description": "A CoAP library for node modelled after 'http'",
+  "main": "index.js",
+  "keywords": [
+    "coap",
+    "m2m",
+    "iot"
+  ],
+  "author": {
+    "name": "Tankerdream",
+    "email": "ljy091@126.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "~1.21.4"
+  }
+}
