@@ -30,4 +30,27 @@ describe('ladder',function(){
 
     })
 
+    it('should push the value in the Timeline',function(){
+
+        var test_value = Math.random()
+        stream.pushTimeline('test_timeline',test_value)
+
+        redis.lrange('test_timeline',0,-1,function(error,value){
+            assert.equal(test_value,value)
+            done()
+        })
+    })
+
+    it('should get the value from the Timeline',function(){
+
+        var test_value = Math.random()
+        var init_time = new Date().getTime()
+        stream.pushTimeline('test_timeline',test_value)
+        var end_time = new Date().getTime()
+        stream.pollTimeline('test_timeline',init_time,end_time,function(value){
+            assert.equal(test_value,value)
+        })
+
+    })
+
 })
